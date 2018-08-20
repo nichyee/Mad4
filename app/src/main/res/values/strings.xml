@@ -6,6 +6,10 @@
     <string name="joke_length">Joke Length:</string>
     <string name="_1_joke">1 Joke</string>
     <string name="_3_jokes">3 Jokes</string>
+    <string name="jokes_selected">jokes selected</string>
+    <string name="downloading_joke">Downloading joke...</string>
+    <string name="blank" />
+    <string name="one">1</string>
 
     <string-array name="length_array">
         <item>Short</item>

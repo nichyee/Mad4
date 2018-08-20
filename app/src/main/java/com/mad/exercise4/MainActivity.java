@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(MainActivity.this, lengthSpinner.getSelectedItem() + " jokes selected", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, lengthSpinner.getSelectedItem() + getString(R.string.jokes_selected), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog.setMessage("Downloading joke...");
+            dialog.setMessage(getString(R.string.downloading_joke));
             dialog.show();
         }
 
@@ -148,9 +148,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (dialog.isShowing()) {
                 dialog.dismiss();
             }
-            firstJoke.setText(joke);
-            secondJoke.setText("");
-            thirdJoke.setText("");
+            firstJoke.setText(s);
+            secondJoke.setText(R.string.blank);
+            thirdJoke.setText(R.string.blank);
         }
     }
 
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Resources res = getResources();
         private ProgressDialog dialog;
         private int noOfJokesToDownload;
-        List<String> jokes = new ArrayList<String>();
+        List<String> jokes = new ArrayList<>();
         boolean failed;
         String joke;
 
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            String download = res.getString(R.string.downloading_s, "1");
+            String download = res.getString(R.string.downloading_s, getString(R.string.one));
             dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             dialog.setMessage(download);
             dialog.setCancelable(false);
@@ -216,8 +216,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if (failed) {
                 firstJoke.setText(R.string.failed_jokes);
-                secondJoke.setText("");
-                thirdJoke.setText("");
+                secondJoke.setText(R.string.blank);
+                thirdJoke.setText(R.string.blank);
             } else {
                 for (int i = 0; i < strings.length; i++) {
                     switch (i) {
