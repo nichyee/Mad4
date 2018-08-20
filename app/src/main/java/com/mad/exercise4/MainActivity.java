@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String RYAN_HEISE_SERVICE_LONG = "https://www.ryanheise.com/sarcastic.cgi?len=Long";
     public static final String RYAN_HEISE_SERVICE_MEDIUM = "https://www.ryanheise.com/sarcastic.cgi?len=Medium";
     public static final String RYAN_HEISE_SERVICE_SHORT = "https://www.ryanheise.com/sarcastic.cgi?len=Short";
+    public static final String LONG_STRING = "Long";
+    public static final String MED_STRING = "Medium";
     private TextView firstJoke;
     private TextView secondJoke;
     private TextView thirdJoke;
@@ -66,10 +68,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         URL url;
         //Open a connection to the web service
         switch (lengthSpinner.getSelectedItem().toString()) {
-            case "Long":
+            case LONG_STRING:
                 url = new URL(RYAN_HEISE_SERVICE_LONG);
                 break;
-            case "Medium":
+            case MED_STRING:
                 url = new URL(RYAN_HEISE_SERVICE_MEDIUM);
                 break;
             default:
