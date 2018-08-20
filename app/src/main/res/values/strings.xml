@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Exercise 4</string>
+    <string name="single_joke_fail">Failed to download joke</string>
+    <string name="failed_jokes">Failed to download jokes</string>
+    <string name="downloading_s">Downloading joke %s...</string>
+    <string name="joke_length">Joke Length:</string>
+    <string name="_1_joke">1 Joke</string>
+    <string name="_3_jokes">3 Jokes</string>
+
+    <string-array name="length_array">
+        <item>Short</item>
+        <item>Medium</item>
+        <item>Long</item>
+    </string-array>
+</resources>
